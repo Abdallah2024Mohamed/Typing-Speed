@@ -1,0 +1,212 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --main-color:#2196F3;
+}
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: capitalize;
+}
+.game {
+    background-color: #534879;
+    min-height: 100vh;
+    position: relative;
+    user-select: none;
+    overflow: hidden;    
+}
+.container {
+    margin: auto;
+    max-width: 90%;
+}
+.name {
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--main-color);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 25px;
+}
+.message {
+    background: #fff;
+    padding: 15px;
+    text-align: center;
+    margin: 15px 0;
+    border-radius: 6px;
+}
+.message span{
+    font-weight: bold;
+    color: #6495ed;
+}
+.message span::before{
+    content: "<  ";
+}
+.message span::after{
+    content: "> ";
+}
+.start {
+    background: var(--main-color);
+    padding: 15px;
+    text-align: center;
+    margin: 15px 0;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.start:active {
+    background-color: #2266b4;
+}
+.the-word {
+    text-align: center;
+    font-weight: bold;
+    color: var(--main-color);
+    font-size: 50px;
+}
+.input {
+    margin: 15px 0;
+    width: 100%;
+    display: block;
+    padding: 15px;
+    border: 3px solid var(--main-color);
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    border-radius: 5px;
+    caret-color: var(--main-color);
+}
+.input:focus {
+    outline: none;
+}
+.upcoming-words{
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.upcoming-words div{
+    background-color: var(--main-color);
+    color: #fff;
+    font-weight: bold;
+    margin: 4px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.control {
+        display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+.control span {
+    font-weight: bold;
+    color: #6495ed;
+}
+.full{
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2195f392;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0;
+    transition: 1s;
+    z-index: -1;
+}
+.full.active{
+    opacity: 1;
+    z-index: 2;
+}
+.full .btn-box {
+    width: 340px;
+    min-height: 270px;
+    background: rgba(33, 149, 243, 0.85);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 65px;
+    gap: 32px;
+    position: absolute;
+    left: -400px;
+    transition: 1s cubic-bezier(.77,0,.18,1);
+    backdrop-filter: blur(6px);
+    border: 1.5px solid #fff3;
+}
+.full .btn-box h2 {
+position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    margin: 0;
+    padding: 4px 10px;
+    text-shadow: 0 4px 16px #1a3a5d99, 0 1px 0 #fff8;
+    background: linear-gradient(90deg, #1976d2 40%, #42a5f5 100%);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px #0002;
+    border: 1.5px solid #fff5;
+    width: 90%;
+    text-align: center;
+}
+.full .btn-box .btn {
+    width: 200px;
+    font-size: 22px;
+    padding: 14px 0;
+    margin: 0 0 10px 0;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #fff 60%, #e3f2fd 100%);
+    color: #1976d2;
+    font-weight: bold;
+    box-shadow: 0 2px 12px #0001;
+    transition: background 0.3s, color 0.3s, transform 0.18s, box-shadow 0.18s;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+}
+.full .btn-box .btn:hover, .full .btn-box .btn:focus {
+    background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
+    color: #fff;
+    transform: scale(1.09) translateY(-2px);
+    box-shadow: 0 6px 24px #1976d255;
+}
+.full .btn-box.active {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.relod {
+    background-color: #ff0000;
+    color: #fff;
+    width: 70px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 1s;
+}
+.relod.active {
+    bottom: 50px;
+    transform: translateX(-50%);
+}
